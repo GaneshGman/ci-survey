@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crucial Influence Assessment — Leadership Resources Malaysia</title>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   DESIGN SYSTEM — leadershipresources.my / FranklinCovey brand
+   Primary: Deep Navy  #0D1F35
+   Accent:  Gold       #C4972A
+   Mid:     Royal Blue #1B3F6E
+═══════════════════════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:      #0D1F35;
+  --navy2:     #1B3F6E;
+  --navy3:     #243F62;
+  --gold:      #C4972A;
+  --gold2:     #D4A73A;
+  --gold-lt:   #FDF6E3;
+  --gold-pale: #FEF9EE;
+  --white:     #FFFFFF;
+  --off-white: #F7F8FA;
+  --lt-gray:   #EEF0F3;
+  --border:    #D8DCE4;
+  --text:      #1A1A2E;
+  --text-mid:  #4A5568;
+  --text-lt:   #718096;
+  --success:   #1A7F4B;
+  --success-lt:#E6F5ED;
+  --red:       #C53030;
+  --red-lt:    #FEF0F0;
+  --shadow:    0 2px 16px rgba(13,31,53,.10);
+  --shadow-lg: 0 8px 40px rgba(13,31,53,.16);
+  --r:         10px;
+  --rsm:       6px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: var(--off-white);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ══ TOP BAR ══════════════════════════════════════════════════ */
+.topbar {
+  background: var(--navy);
+  padding: 10px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.topbar-brand {
+  display: flex; align-items: center; gap: 12px;
+}
+.topbar-logo {
+  height: 36px; width: auto;
+}
+.topbar-sep {
+  width: 1px; height: 28px;
+  background: rgba(255,255,255,.25);
+}
+.topbar-name {
+  font-size: 12px; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: rgba(255,255,255,.7);
+}
+.topbar-partner {
+  font-size: 11px; color: var(--gold2);
+  font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+}
+
+/* ══ HERO ═════════════════════════════════════════════════════ */
+.hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 60%, var(--navy3) 100%);
+  padding: 56px 32px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), var(--gold2), var(--gold));
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 20% 50%, rgba(196,151,42,.08) 0%, transparent 60%),
+                    radial-gradient(circle at 80% 20%, rgba(255,255,255,.04) 0%, transparent 50%);
+  pointer-events: none;
+}
+.hero-cl-logo {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(196,151,42,.4);
+  border-radius: 100px;
+  padding: 6px 20px;
+  margin-bottom: 22px;
+}
+.hero-cl-logo span {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--gold2);
+}
+.hero h1 {
+  font-family: 'Merriweather', serif;
+  font-size: clamp(26px, 5vw, 42px);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 14px;
+  letter-spacing: -.01em;
+}
+.hero h1 span { color: var(--gold2); }
+.hero-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,.65);
+  max-width: 520px;
+  margin: 0 auto 28px;
+  line-height: 1.65;
+}
+.hero-meta {
+  display: inline-flex;
+  gap: 0;
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: var(--r);
+  overflow: hidden;
+}
+.hero-meta-item {
+  padding: 12px 24px;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,.12);
+}
+.hero-meta-item:last-child { border-right: none; }
+.hero-meta-item .val {
+  font-family: 'Merriweather', serif;
+  font-size: 22px; font-weight: 700;
+  color: var(--gold2);
+  line-height: 1;
+  display: block;
+}
+.hero-meta-item .lbl {
+  font-size: 11px;
+  color: rgba(255,255,255,.5);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-top: 3px;
+  display: block;
+}
+
+/* ══ PROGRESS ═════════════════════════════════════════════════ */
+.progress-bar-wrap {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 0 32px;
+  position: sticky; position: -webkit-sticky; top: 0; z-index: 100;
+  box-shadow: 0 2px 8px rgba(13,31,53,.08);
+}
+.progress-inner {
+  max-width: 800px; margin: 0 auto;
+  display: flex; align-items: center; gap: 14px;
+  padding: 13px 0;
+}
+.prog-label { font-size: 12px; font-weight: 700; color: var(--text-lt); white-space: nowrap; min-width: 90px; }
+.prog-track { flex: 1; height: 5px; background: var(--lt-gray); border-radius: 100px; overflow: hidden; }
+.prog-fill   { height: 100%; background: linear-gradient(90deg, var(--navy2), var(--gold)); border-radius: 100px; transition: width .5s cubic-bezier(.4,0,.2,1); width: 0%; }
+.prog-pct    { font-size: 12px; font-weight: 700; color: var(--navy2); min-width: 36px; text-align: right; }
+
+/* ══ SHELL + CARD ═════════════════════════════════════════════ */
+.shell { max-width: 800px; margin: 0 auto; padding: 36px 20px 80px; }
+.card  { background: var(--white); border-radius: 14px; border: 1px solid var(--border); box-shadow: var(--shadow-lg); overflow: hidden; }
+
+/* ══ STEP SYSTEM ══════════════════════════════════════════════ */
+.step { display: none; }
+.step.active { display: block; animation: fadeUp .3s ease; }
+#step-results { display: none; }
+#step-results.active { display: block; animation: fadeUp .35s ease; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
+
+/* ══ SECTION ACCENT STRIPE ════════════════════════════════════ */
+.sec-stripe { height: 5px; background: linear-gradient(90deg, var(--navy), var(--navy2)); }
+.sec-stripe.gold { background: linear-gradient(90deg, var(--gold), var(--gold2)); }
+
+/* ══ STEP HEADER ══════════════════════════════════════════════ */
+.step-head {
+  padding: 28px 36px 20px;
+  border-bottom: 1px solid var(--lt-gray);
+  background: linear-gradient(180deg, #F0F4FA 0%, var(--white) 100%);
+}
+.step-eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--navy2); margin-bottom: 8px;
+  display: flex; align-items: center; gap: 8px;
+}
+.step-eyebrow::before {
+  content: ''; width: 20px; height: 2px;
+  background: var(--gold); display: inline-block;
+}
+.step-head h2 {
+  font-family: 'Merriweather', serif;
+  font-size: 22px; font-weight: 700;
+  color: var(--navy); margin-bottom: 6px; line-height: 1.25;
+}
+.step-head p { font-size: 13px; color: var(--text-mid); }
+.step-head p em { color: var(--navy2); font-style: normal; font-weight: 700; }
+
+/* ══ INTRO FORM ═══════════════════════════════════════════════ */
+.intro-body { padding: 30px 36px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 18px; }
+.form-row.solo { grid-template-columns: 1fr; }
+@media(max-width:540px){ .form-row { grid-template-columns: 1fr; } }
+
+.field label {
+  display: block; font-size: 12px; font-weight: 700;
+  letter-spacing: .07em; text-transform: uppercase;
+  color: var(--text-mid); margin-bottom: 7px;
+}
+.field label .req { color: #C53030; margin-left: 2px; }
+.field input {
+  width: 100%; padding: 13px 16px;
+  border: 1.5px solid var(--border); border-radius: var(--rsm);
+  font-family: 'Lato', sans-serif; font-size: 14px;
+  color: var(--text); background: var(--off-white);
+  transition: border-color .2s, box-shadow .2s, background .2s;
+  outline: none;
+}
+.field input:focus {
+  border-color: var(--navy2); background: var(--white);
+  box-shadow: 0 0 0 3px rgba(27,63,110,.12);
+}
+
+/* ══ QUESTIONS ════════════════════════════════════════════════ */
+.questions-body { padding: 22px 36px 26px; }
+
+.q-card {
+  background: var(--off-white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r);
+  padding: 18px 20px 16px;
+  margin-bottom: 12px;
+  transition: border-color .2s, background .18s, transform .15s;
+}
+.q-card:hover { border-color: #b8c4d8; transform: translateY(-1px); }
+.q-card.answered {
+  background: #EEF3FB;
+  border-color: var(--navy2);
+}
+.q-text {
+  font-size: 14px; line-height: 1.65; color: var(--text);
+  margin-bottom: 16px; font-weight: 400;
+}
+.q-badge {
+  display: inline-block; background: var(--navy); color: var(--white);
+  font-size: 10px; font-weight: 700; border-radius: 4px;
+  padding: 2px 8px; margin-right: 9px; vertical-align: 1px;
+}
+
+/* ══ RATING BUTTONS ═══════════════════════════════════════════ */
+.rating-row { display: flex; gap: 8px; }
+.rating-row input[type=radio] { display: none; }
+.rating-row label {
+  flex: 1; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 4px;
+  padding: 10px 4px 8px;
+  border: 1.5px solid var(--border); border-radius: var(--rsm);
+  cursor: pointer; background: var(--white); user-select: none;
+  transition: all .15s ease; text-align: center;
+}
+.rating-row label .rn {
+  font-family: 'Merriweather', serif;
+  font-size: 19px; font-weight: 700;
+  color: #b0bac8; line-height: 1; transition: color .15s;
+}
+.rating-row label .rt {
+  font-size: 9px; font-weight: 700;
+  color: #b0bac8; text-transform: uppercase;
+  letter-spacing: .04em; line-height: 1.2; transition: color .15s;
+}
+.rating-row label:hover { border-color: var(--navy2); background: #EEF3FB; }
+.rating-row label:hover .rn, .rating-row label:hover .rt { color: var(--navy2); }
+.rating-row input[type=radio]:checked + label {
+  background: var(--navy); border-color: var(--navy);
+  box-shadow: 0 4px 14px rgba(13,31,53,.28);
+  transform: translateY(-2px);
+}
+.rating-row input[type=radio]:checked + label .rn,
+.rating-row input[type=radio]:checked + label .rt { color: var(--white); }
+@media(max-width:480px){ .rating-row label .rt{display:none;} .rating-row label{padding:10px 2px;} }
+
+/* ══ VALIDATION ═══════════════════════════════════════════════ */
+.val-msg {
+  display: none; align-items: center; gap: 8px;
+  margin: -4px 36px 14px; padding: 10px 14px;
+  background: var(--red-lt); border: 1px solid #FECACA;
+  border-radius: var(--rsm); font-size: 12px; color: var(--red); font-weight: 700;
+}
+.val-msg.show { display: flex; }
+
+/* ══ NAV BAR ══════════════════════════════════════════════════ */
+.nav-bar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 36px 26px;
+  border-top: 1px solid var(--lt-gray); gap: 12px;
+}
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 13px 28px; border-radius: var(--rsm);
+  font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700;
+  cursor: pointer; border: none; transition: all .18s;
+  letter-spacing: .02em;
+}
+.btn:disabled { opacity:.45; cursor:not-allowed; transform:none!important; box-shadow:none!important; }
+.btn-back {
+  background: var(--lt-gray); color: var(--text-mid);
+  border: 1.5px solid var(--border);
+}
+.btn-back:hover { background: #E2E6EF; color: var(--text); }
+.btn-next {
+  background: var(--navy); color: var(--white);
+  box-shadow: 0 4px 14px rgba(13,31,53,.3);
+}
+.btn-next:hover { background: var(--navy2); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(13,31,53,.38); }
+.btn-submit {
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  color: var(--navy); font-size: 15px; padding: 14px 36px;
+  box-shadow: 0 4px 18px rgba(196,151,42,.38);
+  font-weight: 900;
+}
+.btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 26px rgba(196,151,42,.48); }
+
+/* ══ RESULTS ══════════════════════════════════════════════════ */
+.res-hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+  padding: 36px 36px 28px; color: var(--white); text-align: center;
+  position: relative; overflow: hidden;
+}
+.res-hero::after {
+  content: ''; position: absolute;
+  bottom: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, var(--gold), var(--gold2), var(--gold));
+}
+.res-check {
+  width: 56px; height: 56px;
+  background: rgba(196,151,42,.2);
+  border: 2px solid var(--gold2);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px; margin: 0 auto 18px;
+  animation: pop .45s cubic-bezier(.175,.885,.32,1.275);
+}
+@keyframes pop { from{transform:scale(0);opacity:0} to{transform:scale(1);opacity:1} }
+.res-hero h2 { font-family:'Merriweather',serif; font-size:28px; font-weight:700; margin-bottom:7px; }
+.res-respondent { font-size:16px; color:var(--gold2); font-weight:700; margin-bottom:4px; }
+.res-meta2 { font-size:12px; color:rgba(255,255,255,.5); }
+
+.profile-card {
+  margin: 22px 36px 0;
+  border-radius: var(--r);
+  padding: 20px 24px;
+  display: flex; align-items: flex-start; gap: 16px;
+  border: 2px solid transparent;
+}
+.pc-icon { font-size: 36px; flex-shrink: 0; line-height: 1; }
+.pc-tag  { font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; margin-bottom:4px; }
+.pc-title { font-family:'Merriweather',serif; font-size:21px; font-weight:700; margin-bottom:5px; line-height:1.2; }
+.pc-desc { font-size:13px; line-height:1.6; }
+.pc-master    { background:#EBF9F1; border-color:#74D499; color:#15663B; }
+.pc-effective { background:#EBF4FF; border-color:#76B9F5; color:#1A4E8A; }
+.pc-apprentice{ background:var(--gold-lt); border-color:#E8C46A; color:#7A5A0A; }
+.pc-novice    { background:var(--red-lt); border-color:#F5A0A0; color:#8B1F1F; }
+
+/* Scores table */
+.sec-scores { padding: 22px 36px 4px; }
+.sec-scores-hdr {
+  font-size:11px; font-weight:700; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--text-lt); margin-bottom:16px;
+  padding-bottom:10px; border-bottom:2px solid var(--lt-gray);
+}
+.sec-row {
+  display: grid;
+  grid-template-columns: 1fr 56px 180px 130px;
+  align-items: center; gap: 14px;
+  padding: 12px 0; border-bottom: 1px solid var(--lt-gray);
+}
+.sec-row:last-child { border-bottom: none; }
+@media(max-width:580px){
+  .sec-row { grid-template-columns: 1fr 52px; }
+  .sec-bar,.sec-pill { grid-column: 1/-1; }
+}
+.sec-name  { font-size:13px; font-weight:700; color:var(--navy); }
+.sec-pages { font-size:11px; color:var(--text-lt); margin-top:2px; }
+.sec-num {
+  font-family:'Merriweather',serif;
+  font-size:23px; font-weight:700;
+  color:var(--navy); text-align:center; line-height:1;
+}
+.sec-num sub { font-size:12px; font-weight:400; color:var(--text-lt); font-family:'Lato',sans-serif; }
+.sec-bar-bg { height:7px; background:var(--lt-gray); border-radius:100px; overflow:hidden; }
+.sec-bar-fill { height:100%; border-radius:100px; transition:width 1s cubic-bezier(.4,0,.2,1) .4s; width:0; }
+.bar-m { background:linear-gradient(90deg,#15803d,#4ade80); }
+.bar-e { background:linear-gradient(90deg,#1B3F6E,#5B93DD); }
+.bar-a { background:linear-gradient(90deg,var(--gold),var(--gold2)); }
+.bar-n { background:linear-gradient(90deg,#9b2226,#f87171); }
+.sec-pill {
+  display:inline-block; font-size:11px; font-weight:700;
+  border-radius:100px; padding:5px 14px;
+  text-align:center; white-space:nowrap;
+}
+.pill-m { background:#DCFCE7; color:#15803d; }
+.pill-e { background:#DBEAFE; color:#1B3F6E; }
+.pill-a { background:var(--gold-lt); color:#7A5A0A; }
+.pill-n { background:var(--red-lt); color:#8B1F1F; }
+
+/* Legend */
+.legend {
+  margin: 18px 36px 0;
+  background: var(--off-white);
+  border: 1px solid var(--border);
+  border-radius: var(--r); padding: 18px 22px;
+}
+.legend-hdr {
+  font-size:11px; font-weight:700; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--text-lt); margin-bottom:12px;
+}
+.legend-grid { display:flex; flex-direction:column; gap:9px; }
+.legend-row { display:flex; align-items:center; gap:12px; font-size:12px; }
+.legend-dot { width:9px; height:9px; border-radius:50%; flex-shrink:0; }
+.legend-row strong { font-weight:700; color:var(--text); }
+.legend-row span { color:var(--text-lt); margin-left:4px; }
+
+/* Submit notice */
+.sub-notice {
+  display:none; margin:16px 36px 0;
+  padding:13px 18px; border-radius:var(--rsm);
+  font-size:13px; font-weight:700;
+  align-items:center; gap:10px; line-height:1.5;
+}
+.sub-notice.show { display:flex; }
+.notice-ok  { background:var(--success-lt); color:var(--success); border:1px solid #6FCF97; }
+.notice-err { background:var(--red-lt); color:var(--red); border:1px solid #FCA5A5; }
+.notice-sending { background:#EBF4FF; color:var(--navy2); border:1px solid #76B9F5; }
+
+/* Spinner */
+.spinner {
+  width:14px; height:14px;
+  border:2px solid rgba(27,63,110,.2);
+  border-top-color:var(--navy2);
+  border-radius:50%; flex-shrink:0;
+  animation:spin .7s linear infinite;
+}
+@keyframes spin { to{transform:rotate(360deg)} }
+
+/* Actions */
+.res-actions { display:flex; gap:12px; padding:20px 36px 36px; flex-wrap:wrap; }
+.btn-print {
+  background:var(--navy); color:var(--white);
+  box-shadow:0 4px 14px rgba(13,31,53,.25);
+}
+.btn-print:hover { background:var(--navy2); transform:translateY(-1px); }
+.btn-restart { background:var(--lt-gray); color:var(--text-mid); border:1.5px solid var(--border); }
+.btn-restart:hover { background:#E2E6EF; color:var(--text); }
+
+/* Footer */
+.site-footer {
+  background:var(--navy);
+  text-align:center; padding:24px 20px;
+  margin-top: 0;
+}
+.site-footer p {
+  font-size:12px; color:rgba(255,255,255,.45);
+}
+.site-footer a { color:var(--gold2); text-decoration:none; font-weight:700; }
+
+/* ══ MOBILE FIXES ══════════════════════════════════════════════ */
+@media(max-width:600px){
+  /* progress bar */
+  .progress-bar-wrap { padding: 0 16px; }
+  .prog-label { min-width: 70px; font-size: 11px; }
+
+  /* shell & card */
+  .shell { padding: 16px 12px 60px; }
+  .card  { border-radius: 10px; }
+
+  /* step headers */
+  .step-head { padding: 20px 18px 16px; }
+  .step-head h2 { font-size: 18px; }
+
+  /* intro form */
+  .intro-body { padding: 20px 18px; }
+  .form-row { gap: 14px; margin-bottom: 14px; }
+
+  /* question cards */
+  .questions-body { padding: 14px 18px 18px; }
+  .q-card { padding: 14px 14px 12px; }
+  .q-text { font-size: 13px; margin-bottom: 14px; }
+
+  /* rating row — bigger tap targets on mobile */
+  .rating-row { gap: 5px; }
+  .rating-row label { padding: 12px 2px 10px; min-height: 52px; }
+  .rating-row label .rn { font-size: 17px; }
+
+  /* nav buttons */
+  .nav-bar { padding: 14px 18px 20px; }
+  .btn { padding: 13px 18px; font-size: 13px; }
+  .btn-submit { padding: 13px 20px; font-size: 14px; }
+
+  /* validation */
+  .val-msg { margin: -4px 18px 12px; }
+
+  /* results */
+  .res-hero { padding: 28px 18px 22px; }
+  .res-hero h2 { font-size: 22px; }
+  .profile-card { margin: 16px 18px 0; padding: 16px 16px; flex-direction: column; gap: 10px; }
+  .pc-title { font-size: 18px; }
+  .sec-scores { padding: 16px 18px 4px; }
+  .legend { margin: 14px 18px 0; }
+  .sub-notice { margin: 14px 18px 0; }
+  .res-actions { padding: 16px 18px 28px; flex-direction: column; }
+  .res-actions .btn { width: 100%; justify-content: center; }
+
+  /* score rows on mobile — 2-col layout */
+  .sec-row { grid-template-columns: 1fr 48px; gap: 8px; padding: 10px 0; }
+  .sec-bar, .sec-pill { grid-column: 1 / -1; }
+}
+
+/* ══ PRINT / SAVE AS PDF ══════════════════════════════════════ */
+@media print {
+  /* hide chrome, keep only the results content */
+  .topbar,
+  .hero,
+  .progress-bar-wrap,
+  .res-actions,
+  .sub-notice,
+  .site-footer,
+  .step { display: none !important; }
+
+  /* reset page layout */
+  html, body { background: #fff !important; margin: 0; padding: 0; }
+  .shell { max-width: 100%; padding: 0; margin: 0; }
+  .card  { box-shadow: none !important; border: none !important; border-radius: 0 !important; }
+
+  /* always show results when printing */
+  #step-results { display: block !important; }
+
+  /* results hero — keep navy background in print */
+  .res-hero {
+    background: #0D1F35 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* force colours in print */
+  .sec-bar-fill,
+  .profile-card,
+  .sec-pill,
+  .sec-stripe,
+  .legend-dot {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* keep profile card colours */
+  .pc-master    { background: #EBF9F1 !important; }
+  .pc-effective { background: #EBF4FF !important; }
+  .pc-apprentice{ background: #FDF6E3 !important; }
+  .pc-novice    { background: #FEF0F0 !important; }
+
+  /* score bars */
+  .bar-m { background: #15803d !important; }
+  .bar-e { background: #1B3F6E !important; }
+  .bar-a { background: #C4972A !important; }
+  .bar-n { background: #9b2226 !important; }
+
+  /* pills */
+  .pill-m { background: #DCFCE7 !important; color: #15803d !important; }
+  .pill-e { background: #DBEAFE !important; color: #1B3F6E !important; }
+  .pill-a { background: #FDF6E3 !important; color: #7A5A0A !important; }
+  .pill-n { background: #FEF0F0 !important; color: #8B1F1F !important; }
+
+  /* page margins */
+  @page { margin: 16mm 14mm; size: A4 portrait; }
+
+  /* prevent orphaned rows */
+  .sec-row { break-inside: avoid; page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ TOP BAR ═══════════════════════════════════════════════ -->
+
+
+<!-- ═══ HERO ═══════════════════════════════════════════════════ -->
+
+
+<!-- ═══ PROGRESS BAR ══════════════════════════════════════════ -->
+<div class="progress-bar-wrap">
+  <div class="progress-inner">
+    <div class="prog-label" id="prog-label">Your Details</div>
+    <div class="prog-track"><div class="prog-fill" id="prog-fill"></div></div>
+    <div class="prog-pct" id="prog-pct">0%</div>
+  </div>
+</div>
+
+<!-- ═══ MAIN CARD ══════════════════════════════════════════════ -->
+<main class="shell">
+<div class="card">
+
+  <!-- STEP 0: RESPONDENT INFO -->
+  <div class="step active" id="step-0">
+    <div class="sec-stripe gold"></div>
+    <div class="step-head">
+      <div class="step-eyebrow">Before You Begin</div>
+      <h2>Your Details</h2>
+      <p>Please provide your information. Your results will be saved for management review.</p>
+    </div>
+    <div class="intro-body">
+      <div class="form-row">
+        <div class="field">
+          <label>Full Name <span class="req">*</span></label>
+          <input id="f-name" type="text" placeholder="e.g. Ahmad Razif bin Abdullah" autocomplete="name">
+        </div>
+        <div class="field">
+          <label>Work Email <span class="req">*</span></label>
+          <input id="f-email" type="email" placeholder="e.g. ahmad@company.com" autocomplete="email">
+        </div>
+      </div>
+      <div class="form-row solo">
+        <div class="field">
+          <label>Job Title <span class="req">*</span></label>
+          <input id="f-jobtitle" type="text" placeholder="e.g. Head of Operations">
+        </div>
+      </div>
+    </div>
+    <div class="val-msg" id="val-0">⚠ Please fill in all three fields to continue.</div>
+    <div class="nav-bar">
+      <div></div>
+      <button class="btn btn-next" onclick="goNext(0)">Begin Assessment &rarr;</button>
+    </div>
+  </div>
+
+  <!-- SECTION STEPS — injected by JS -->
+
+  <!-- RESULTS -->
+  <div id="step-results">
+    <div class="sec-stripe gold"></div>
+    <div class="res-hero">
+      <div class="res-check">✓</div>
+      <h2>Assessment Complete</h2>
+      <div class="res-respondent" id="res-name"></div>
+      <div class="res-meta2" id="res-meta2"></div>
+    </div>
+    <div id="profile-wrap"></div>
+    <div class="sec-scores">
+      <div class="sec-scores-hdr">Your Score by Influence Strategy</div>
+      <div id="scores-list"></div>
+    </div>
+    <div class="legend">
+      <div class="legend-hdr">Crucial Influence Level Guide</div>
+      <div class="legend-grid">
+        <div class="legend-row"><div class="legend-dot" style="background:#15803d"></div><strong>Master Influencer</strong><span>Score 19–20</span></div>
+        <div class="legend-row"><div class="legend-dot" style="background:#1B3F6E"></div><strong>Effective Influencer</strong><span>Score 17–18</span></div>
+        <div class="legend-row"><div class="legend-dot" style="background:#C4972A"></div><strong>Apprentice Influencer</strong><span>Score 15–16</span></div>
+        <div class="legend-row"><div class="legend-dot" style="background:#9b2226"></div><strong>Novice Influencer</strong><span>Score below 15</span></div>
+      </div>
+    </div>
+    <div class="sub-notice" id="sub-notice"></div>
+    <div class="res-actions">
+      <button class="btn btn-print" onclick="doPrint()">&#128438; Print / Save as PDF</button>
+      <button class="btn btn-restart" onclick="restartSurvey()">&#8635; Retake Survey</button>
+    </div>
+  </div>
+
+</div><!-- /card -->
+</main>
+
+<!-- ═══ FOOTER ═════════════════════════════════════════════════ -->
+
+
+<script>
+// ════════════════════════════════════════════════════════════════════
+//  ⚙️  GOOGLE SHEETS CONFIGURATION
+//  Step 1: Deploy your Google Apps Script as a Web App (see guide below)
+//  Step 2: Paste your Web App URL here
+// ════════════════════════════════════════════════════════════════════
+const APPS_SCRIPT_URL = "YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
+// Example: "https://script.google.com/macros/s/AKfycbx.../exec"
+
+// ════════════════════════════════════════════════════════════════════
+//  SURVEY DATA
+// ════════════════════════════════════════════════════════════════════
+const SECTIONS = [
+  { title:"Focus and Measure", pages:"Pages 20–29", color:"#0D1F35", questions:[
+    "When I try to influence change, I make sure everyone understands the results we're trying to achieve and is committed to achieving them.",
+    "To help others stay focused and committed, I frequently share measures that demonstrate our progress.",
+    "To prevent people from falling into old, unhealthy routines, I remove or modify measures that encourage the wrong behaviors.",
+    "To achieve challenging goals, I help others break long-term goals into daily or weekly milestones that encourage steady progress."
+  ]},
+  { title:"Find Vital Behaviors", pages:"Pages 29–36", color:"#1B3F6E", questions:[
+    "When trying to influence others, I specify the behaviors people need to adopt or change rather than emphasizing vague values or generic qualities I hope they'll adopt.",
+    "I make sure we focus on the two or three behaviors that will have the greatest impact on results.",
+    "I check to ensure everyone agrees to adopt the two or three behaviors that will help us achieve the results we want.",
+    "I frequently track how well we're adopting these key behaviors, as well as results, to see if my influence efforts are working."
+  ]},
+  { title:"Help Them Love What They Hate", pages:"Pages 49–76", color:"#2C3E6B", questions:[
+    "Whenever possible, I invite people to try out and test new things rather than use authority or pressure to compel them.",
+    "I go beyond business and economic arguments to help people see the moral and ethical imperatives that call for change.",
+    "I avoid giving lectures or logical arguments for why others should change and instead tell compelling stories that illustrate the human and moral reasons that call for change.",
+    "I find creative ways to engage people in direct experiences (field trips, pilot programs, simulations, etc.) that will help them feel differently about the need for change."
+  ]},
+  { title:"Help Them Do What They Can't", pages:"Pages 77–94", color:"#0D1F35", questions:[
+    "I share hints, tips, practice opportunities, and take time to coach those I am trying to help change.",
+    "I invest as much time and effort in helping people develop the skills and abilities they need to succeed as I do in trying to motivate them to change.",
+    "I help others develop skills in ALL the areas that may be required, including the social, emotional, and interpersonal skills and not just the technical or physical skills they need.",
+    "I create lots of opportunities to help people practice new skills in challenging but safe conditions."
+  ]},
+  { title:"Provide Encouragement", pages:"Pages 95–124", color:"#7A4A0A", questions:[
+    "I make sure others can see I am willing to sacrifice a great deal (ego, time, money, or other priorities) to achieve change.",
+    "I carefully identify opinion leaders and get them involved in encouraging others to change.",
+    "I make sure formal leaders teach, model, praise, and coach others toward the new behaviors.",
+    "I encourage and teach everyone how to hold everyone else accountable for the new behaviors (including me), irrespective of level or position."
+  ]},
+  { title:"Provide Assistance", pages:"Pages 125–150", color:"#1B3F6E", questions:[
+    "I make sure others can get timely assistance whenever they are struggling with the new behaviors.",
+    "I identify obstacles to change and make sure people have others around them that can help overcome these obstacles.",
+    "I go to great lengths to ensure people feel safe to ask for help without feeling embarrassed or put on the spot.",
+    "I ensure everyone knows they have the authority to step up to the new behaviors."
+  ]},
+  { title:"Reward with Care", pages:"Pages 151–170", color:"#7A4A0A", questions:[
+    "I put more effort into sharing the moral, ethical, and business reasons for change than into rewarding or punishing people toward the change.",
+    "I ensure that our formal reward and discipline systems encourage the desired behavior more than discourage the undesired behavior.",
+    "I make careful use of small yet thoughtful rewards to encourage people who make early attempts to change.",
+    "I use formal rewards to encourage not just the right results, but also the right behaviors that will lead to those results."
+  ]},
+  { title:"Change the Environment", pages:"Pages 171–198", color:"#0D1F35", questions:[
+    "I use visual reminders, regular communications, and metrics to keep the new behaviors and need for change visible and \"top of mind.\"",
+    "I make sure people have access to the tools, information, and resources they need to adopt new behaviors.",
+    "Where possible, I redesign the physical space of those I'm trying to influence to make the new behavior easy to do and the bad behavior hard to do.",
+    "Where possible, I change the physical environment so the new behavior becomes an automatic part of our workflow and people can act without having to think about it."
+  ]}
+];
+
+const RL = ["Strongly\nDisagree","Somewhat\nDisagree","Neutral","Somewhat\nAgree","Strongly\nAgree"];
+
+// ── BUILD SECTION STEPS ─────────────────────────────────────────────
+const card = document.querySelector('.card');
+const resultsEl = document.getElementById('step-results');
+
+SECTIONS.forEach((sec, si) => {
+  const div = document.createElement('div');
+  div.className = 'step'; div.id = `step-${si + 1}`;
+
+  const qs = sec.questions.map((q, qi) => `
+    <div class="q-card" id="qc-${si}-${qi}">
+      <div class="q-text"><span class="q-badge">${qi + 1}</span>${q}</div>
+      <div class="rating-row">
+        ${[1,2,3,4,5].map(v => `
+          <input type="radio" name="q${si}q${qi}" id="r${si}${qi}v${v}" value="${v}" onchange="markA(${si},${qi})">
+          <label for="r${si}${qi}v${v}">
+            <span class="rn">${v}</span>
+            <span class="rt">${RL[v-1].replace('\n','<br>')}</span>
+          </label>
+        `).join('')}
+      </div>
+    </div>`).join('');
+
+  const isLast = si === SECTIONS.length - 1;
+  div.innerHTML = `
+    <div class="sec-stripe" style="background:${sec.color}"></div>
+    <div class="step-head">
+      <div class="step-eyebrow">Strategy ${si + 1} of ${SECTIONS.length}</div>
+      <h2>${sec.title}</h2>
+      <p>Rate each statement based on your typical behaviour. <em>${sec.pages}</em></p>
+    </div>
+    <div class="questions-body">${qs}</div>
+    <div class="val-msg" id="val-${si + 1}">⚠ Please answer all 4 questions before continuing.</div>
+    <div class="nav-bar">
+      <button class="btn btn-back" onclick="goPrev(${si + 1})">&#8592; Back</button>
+      ${isLast
+        ? `<button class="btn btn-submit" onclick="submitAll()">Submit &amp; See Results &#10022;</button>`
+        : `<button class="btn btn-next" onclick="goNext(${si + 1})">Next &#8594;</button>`}
+    </div>`;
+  card.insertBefore(div, resultsEl);
+});
+
+// ── NAVIGATION & PROGRESS ───────────────────────────────────────────
+const TOTAL = SECTIONS.length + 1;
+let cur = 0;
+
+function setProgress(n) {
+  const pct = Math.round((n / TOTAL) * 100);
+  document.getElementById('prog-fill').style.width = pct + '%';
+  document.getElementById('prog-pct').textContent = pct + '%';
+  document.getElementById('prog-label').textContent =
+    n === 0 ? 'Your Details'
+    : n <= SECTIONS.length ? `Strategy ${n} of ${SECTIONS.length}`
+    : 'Complete ✓';
+}
+function showStep(n) {
+  document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+  const el = document.getElementById(`step-${n}`);
+  if (el) { el.classList.add('active'); cur = n; }
+  setProgress(n);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function goNext(from) {
+  if (from === 0) {
+    const n = document.getElementById('f-name').value.trim();
+    const e = document.getElementById('f-email').value.trim();
+    const j = document.getElementById('f-jobtitle').value.trim();
+    if (!n || !e || !j) { document.getElementById('val-0').classList.add('show'); return; }
+    document.getElementById('val-0').classList.remove('show');
+    showStep(1); return;
+  }
+  const si = from - 1;
+  const ok = SECTIONS[si].questions.every((_, qi) =>
+    document.querySelector(`input[name="q${si}q${qi}"]:checked`));
+  if (!ok) { document.getElementById(`val-${from}`).classList.add('show'); return; }
+  document.getElementById(`val-${from}`).classList.remove('show');
+  showStep(from + 1);
+}
+function goPrev(from) { showStep(from - 1); }
+function markA(si, qi) { document.getElementById(`qc-${si}-${qi}`)?.classList.add('answered'); }
+
+// ── SCORING ─────────────────────────────────────────────────────────
+function lvl(s) {
+  if (s >= 19) return { k:'m', label:'Master Influencer',     pill:'pill-m', bar:'bar-m', pc:'pc-master',     icon:'🏆' };
+  if (s >= 17) return { k:'e', label:'Effective Influencer',  pill:'pill-e', bar:'bar-e', pc:'pc-effective',  icon:'⭐' };
+  if (s >= 15) return { k:'a', label:'Apprentice Influencer', pill:'pill-a', bar:'bar-a', pc:'pc-apprentice', icon:'📘' };
+  return           { k:'n', label:'Novice Influencer',    pill:'pill-n', bar:'bar-n', pc:'pc-novice',    icon:'🔰' };
+}
+function calcScores() {
+  return SECTIONS.map((sec, si) =>
+    sec.questions.reduce((sum, _, qi) => {
+      const el = document.querySelector(`input[name="q${si}q${qi}"]:checked`);
+      return sum + (el ? +el.value : 0);
+    }, 0));
+}
+
+// ── SUBMIT ───────────────────────────────────────────────────────────
+function submitAll() {
+  const lastSi = SECTIONS.length - 1;
+  const ok = SECTIONS[lastSi].questions.every((_, qi) =>
+    document.querySelector(`input[name="q${lastSi}q${qi}"]:checked`));
+  if (!ok) { document.getElementById(`val-${SECTIONS.length}`).classList.add('show'); return; }
+
+  const scores   = calcScores();
+  const name     = document.getElementById('f-name').value.trim();
+  const email    = document.getElementById('f-email').value.trim();
+  const jobTitle = document.getElementById('f-jobtitle').value.trim();
+  const avg      = Math.round(scores.reduce((a, b) => a + b, 0) / scores.length);
+  const ts       = new Date().toLocaleString('en-MY', { timeZone: 'Asia/Kuala_Lumpur' });
+
+  // Show results immediately
+  document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+  document.getElementById('step-results').classList.add('active');
+  setProgress(TOTAL);
+  lastScores = scores;
+  renderResults(name, email, jobTitle, scores, avg);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  // Save to Google Sheets
+  saveToSheets({ name, email, jobTitle, scores, avg, ts });
+}
+
+async function saveToSheets({ name, email, jobTitle, scores, avg, ts }) {
+  const notice = document.getElementById('sub-notice');
+  const isConfigured = APPS_SCRIPT_URL && APPS_SCRIPT_URL !== "https://script.google.com/macros/s/AKfycbzAc_2YAUKkovFFfepErrlBOKFBOprpVbSAsCRdpOznkKqzGyeN2tC612oARJwbC56m/exec";
+  if (!isConfigured) return; // Not yet set up — skip silently
+
+  notice.className = 'sub-notice show notice-sending';
+  notice.innerHTML = '<div class="spinner"></div> Saving your results to Google Sheets&hellip;';
+
+  const payload = {
+    timestamp: ts,
+    name, email, jobTitle, overallAvg: avg,
+    sections: SECTIONS.map((sec, i) => ({
+      strategy: sec.title,
+      score:    scores[i],
+      level:    lvl(scores[i]).label,
+      pages:    sec.pages
+    }))
+  };
+
+  try {
+    const res = await fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify(payload)
+    });
+    const json = await res.json();
+    if (json.status === 'ok') {
+      notice.className = 'sub-notice show notice-ok';
+      notice.textContent = '✅ Results saved successfully. Your management team will be able to review your results in Google Sheets.';
+    } else { throw new Error(json.message || 'Error'); }
+  } catch (err) {
+    notice.className = 'sub-notice show notice-err';
+    notice.textContent = '⚠ Could not save to Google Sheets right now. Please use Print / Save as PDF to keep a copy of your results.';
+  }
+}
+
+// ── RENDER RESULTS ───────────────────────────────────────────────────
+const DESCS = {
+  m: "You consistently demonstrate exceptional influence skills across all eight strategies. You are a role model for leading lasting change within your organisation.",
+  e: "You are highly effective at influencing change. Targeting your lower-scoring strategies will take your impact to the master level.",
+  a: "You have a solid foundation. Intentional focus on your weaker strategies will significantly accelerate your influence and leadership impact.",
+  n: "You are at the beginning of your influence journey. Focusing on the recommended chapters in Crucial Influence will build your skills quickly."
+};
+
+function renderResults(name, email, jobTitle, scores, avg) {
+  document.getElementById('res-name').textContent = name;
+  document.getElementById('res-meta2').textContent = `${jobTitle}  ·  ${email}`;
+
+  const ov = lvl(avg);
+  document.getElementById('profile-wrap').innerHTML = `
+    <div class="profile-card ${ov.pc}">
+      <div class="pc-icon">${ov.icon}</div>
+      <div>
+        <div class="pc-tag">Overall Profile &mdash; Average ${avg}/20</div>
+        <div class="pc-title">${ov.label}</div>
+        <div class="pc-desc">${DESCS[ov.k]}</div>
+      </div>
+    </div>`;
+
+  document.getElementById('scores-list').innerHTML = SECTIONS.map((sec, si) => {
+    const s = scores[si], lv = lvl(s), pct = Math.round((s / 20) * 100);
+    return `
+      <div class="sec-row">
+        <div>
+          <div class="sec-name">${si + 1}. ${sec.title}</div>
+          <div class="sec-pages">${sec.pages}</div>
+        </div>
+        <div class="sec-num">${s}<sub>/20</sub></div>
+        <div class="sec-bar">
+          <div class="sec-bar-bg">
+            <div class="sec-bar-fill ${lv.bar}" data-w="${pct}%" style="width:0%"></div>
+          </div>
+        </div>
+        <div><span class="sec-pill ${lv.pill}">${lv.label}</span></div>
+      </div>`;
+  }).join('');
+
+  requestAnimationFrame(() => {
+    document.querySelectorAll('.sec-bar-fill').forEach(b => b.style.width = b.dataset.w);
+  });
+}
+
+function restartSurvey() {
+  ['f-name','f-email','f-jobtitle'].forEach(id => document.getElementById(id).value = '');
+  document.querySelectorAll('input[type=radio]').forEach(r => r.checked = false);
+  document.querySelectorAll('.q-card').forEach(c => c.classList.remove('answered'));
+  document.getElementById('step-results').classList.remove('active');
+  document.getElementById('sub-notice').className = 'sub-notice';
+  showStep(0);
+}
+
+// ── PRINT / SAVE AS PDF ─────────────────────────────────────────────
+// Works standalone OR embedded inside Google Sites iframe
+let lastScores = [];
+
+function doPrint() {
+  const inIframe = window !== window.top;
+  if (!inIframe) { window.print(); return; }
+
+  const name    = document.getElementById('res-name').textContent;
+  const meta    = document.getElementById('res-meta2').textContent;
+  const profile = document.getElementById('profile-wrap').innerHTML;
+  const sList   = document.getElementById('scores-list').innerHTML;
+
+  const html = `<!DOCTYPE html><html><head>
+<meta charset="UTF-8">
+<title>CI Results — ${name}</title>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Lato',sans-serif;color:#1A1A2E;margin:0;padding:20px;}
+.res-hero{background:#0D1F35;color:#fff;padding:28px 24px;text-align:center;border-radius:8px 8px 0 0;}
+.res-hero h2{font-family:'Merriweather',serif;font-size:24px;margin-bottom:6px;}
+.res-respondent{font-size:15px;color:#D4A73A;font-weight:700;margin-bottom:3px;}
+.res-meta2{font-size:12px;color:rgba(255,255,255,.55);}
+.profile-card{margin:16px 0;border-radius:8px;padding:16px 18px;display:flex;align-items:flex-start;gap:12px;border:2px solid transparent;}
+.pc-icon{font-size:30px;line-height:1;}
+.pc-tag{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:3px;}
+.pc-title{font-family:'Merriweather',serif;font-size:18px;font-weight:700;margin-bottom:4px;}
+.pc-desc{font-size:12px;line-height:1.55;}
+.pc-master{background:#EBF9F1;border-color:#74D499;color:#15663B;}
+.pc-effective{background:#EBF4FF;border-color:#76B9F5;color:#1A4E8A;}
+.pc-apprentice{background:#FDF6E3;border-color:#E8C46A;color:#7A5A0A;}
+.pc-novice{background:#FEF0F0;border-color:#F5A0A0;color:#8B1F1F;}
+h3{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#718096;margin:16px 0 10px;padding-bottom:8px;border-bottom:2px solid #EEF0F3;}
+.sec-row{display:grid;grid-template-columns:1fr 46px 140px 110px;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid #EEF0F3;}
+.sec-row:last-child{border-bottom:none;}
+.sec-name{font-size:12px;font-weight:700;color:#0D1F35;}
+.sec-pages{font-size:10px;color:#718096;margin-top:1px;}
+.sec-num{font-family:'Merriweather',serif;font-size:20px;font-weight:700;color:#0D1F35;text-align:center;}
+.sec-num sub{font-size:11px;font-weight:400;color:#718096;font-family:'Lato',sans-serif;}
+.sec-bar-bg{height:6px;background:#EEF0F3;border-radius:100px;overflow:hidden;}
+.sec-bar-fill{height:100%;border-radius:100px;}
+.bar-m{background:#15803d;}.bar-e{background:#1B3F6E;}.bar-a{background:#C4972A;}.bar-n{background:#9b2226;}
+.sec-pill{display:inline-block;font-size:10px;font-weight:700;border-radius:100px;padding:4px 11px;white-space:nowrap;}
+.pill-m{background:#DCFCE7;color:#15803d;}.pill-e{background:#DBEAFE;color:#1B3F6E;}
+.pill-a{background:#FDF6E3;color:#7A5A0A;}.pill-n{background:#FEF0F0;color:#8B1F1F;}
+.footer{margin-top:20px;font-size:10px;color:#718096;text-align:center;border-top:1px solid #EEF0F3;padding-top:12px;}
+@media print{@page{margin:14mm;size:A4 portrait;}body{padding:0;}
+.pc-master,.pc-effective,.pc-apprentice,.pc-novice,.sec-bar-fill,.sec-pill,.res-hero{-webkit-print-color-adjust:exact;print-color-adjust:exact;}}
+</style></head><body>
+<div class="res-hero"><h2>Crucial Influence Assessment</h2>
+<div class="res-respondent">${name}</div>
+<div class="res-meta2">${meta}</div></div>
+${profile}
+<h3>Score by Influence Strategy</h3>
+<div>${sList}</div>
+<div class="footer">Leadership Resources (M) Sdn Bhd &nbsp;&middot;&nbsp; Authorised Partner of Crucial Learning</div>
+<script>window.onload=function(){window.print();};<\/script>
+</body></html>`;
+
+  const w = window.open('', '_blank');
+  if (w) { w.document.write(html); w.document.close(); }
+  else { alert('Please allow pop-ups for this site to use Save as PDF, or open the survey in a new tab instead of the embedded view.'); }
+}
+
+setProgress(0);
+</script>
+
+<!--
+╔═══════════════════════════════════════════════════════════════════════════╗
+║  GOOGLE SHEETS SETUP GUIDE — STEP BY STEP                                ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+STEP 1 ─ CREATE YOUR GOOGLE SHEET
+──────────────────────────────────────────────────────────────────────────
+1. Go to https://sheets.google.com → click the big green + button
+2. Rename the spreadsheet: "Crucial Influence Survey Results"
+3. In Row 1, type these column headers (one per cell, A to R):
+   A: Timestamp
+   B: Name
+   C: Email
+   D: Job Title
+   E: Overall Avg
+   F: Score – Focus and Measure
+   G: Score – Find Vital Behaviors
+   H: Score – Help Them Love What They Hate
+   I: Score – Help Them Do What They Can't
+   J: Score – Provide Encouragement
+   K: Score – Provide Assistance
+   L: Score – Reward with Care
+   M: Score – Change the Environment
+   N: Level – Focus and Measure
+   O: Level – Find Vital Behaviors
+   P: Level – Help Them Love What They Hate
+   Q: Level – Help Them Do What They Can't
+   R: Level – Provide Encouragement
+   S: Level – Provide Assistance
+   T: Level – Reward with Care
+   U: Level – Change the Environment
+
+
+STEP 2 ─ OPEN APPS SCRIPT
+──────────────────────────────────────────────────────────────────────────
+1. In your Google Sheet, click the top menu: Extensions → Apps Script
+2. A new tab opens — this is your script editor
+3. Delete ALL the existing code (select all, delete)
+4. Paste the following code exactly:
+
+─────────────────────── COPY FROM HERE ────────────────────────────────────
+
+function doPost(e) {
+  try {
+    var data = JSON.parse(e.postData.contents);
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+
+    var row = [
+      data.timestamp,
+      data.name,
+      data.email,
+      data.jobTitle,
+      data.overallAvg,
+      data.sections[0].score,
+      data.sections[1].score,
+      data.sections[2].score,
+      data.sections[3].score,
+      data.sections[4].score,
+      data.sections[5].score,
+      data.sections[6].score,
+      data.sections[7].score,
+      data.sections[0].level,
+      data.sections[1].level,
+      data.sections[2].level,
+      data.sections[3].level,
+      data.sections[4].level,
+      data.sections[5].level,
+      data.sections[6].level,
+      data.sections[7].level
+    ];
+
+    sheet.appendRow(row);
+
+    return ContentService
+      .createTextOutput(JSON.stringify({ status: "ok" }))
+      .setMimeType(ContentService.MimeType.JSON);
+
+  } catch(err) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ status: "error", message: err.toString() }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
+─────────────────────── COPY TO HERE ───────────────────────────────────────
+
+5. Click the 💾 Save icon (or press Ctrl+S)
+6. Name your project: "CI Survey"
+
+
+STEP 3 ─ DEPLOY AS A WEB APP
+──────────────────────────────────────────────────────────────────────────
+1. Click the blue "Deploy" button (top right) → "New deployment"
+2. Click the gear ⚙ icon next to "Type" → select "Web app"
+3. Fill in the settings:
+   → Description: CI Survey Web App
+   → Execute as: Me (your Google account)
+   → Who has access: Anyone
+4. Click "Deploy"
+5. Google will ask you to authorise — click "Authorise access"
+   → Choose your Google account
+   → Click "Advanced" → "Go to CI Survey (unsafe)"
+   → Click "Allow"
+6. Copy the Web App URL — it looks like:
+   https://script.google.com/macros/s/AKfycbxABC123.../exec
+
+
+STEP 4 ─ PASTE URL INTO THIS FILE
+──────────────────────────────────────────────────────────────────────────
+1. Open this HTML file in a text editor (VS Code, Notepad++ or Notepad)
+2. Find this line near the top of the <script> section:
+     const APPS_SCRIPT_URL = "YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
+3. Replace the placeholder with your copied URL, keeping the quotes:
+     const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx.../exec";
+4. Save the HTML file
+
+
+STEP 5 ─ TEST IT
+──────────────────────────────────────────────────────────────────────────
+1. Open the HTML file in your browser (double-click it)
+2. Complete the survey
+3. Check your Google Sheet — a new row should appear within a few seconds
+4. If you see "Results saved successfully ✅" — everything is working!
+
+
+STEP 6 ─ HOST & SHARE AS A LINK (choose one)
+──────────────────────────────────────────────────────────────────────────
+A) Netlify Drop (fastest — no account needed):
+   → Go to https://app.netlify.com/drop
+   → Drag this HTML file onto the page
+   → Copy the link — done!
+
+B) GitHub Pages (permanent free URL):
+   → Create free account at github.com
+   → New public repository named "ci-survey"
+   → Upload this file renamed as "index.html"
+   → Settings → Pages → Source: main branch → Save
+   → Your link: https://yourusername.github.io/ci-survey
+
+C) Send the HTML file directly:
+   → Email the file to participants
+   → They open it in a browser (double-click)
+   → Results still submit to your Google Sheet
+
+
+IMPORTANT NOTES
+──────────────────────────────────────────────────────────────────────────
+• Each time someone submits, a new row appears in your Google Sheet automatically
+• Share the Google Sheet (View Only) with your management team for review
+• To update the survey, edit this HTML file and re-upload/re-share
+• If you need to redeploy the Apps Script, always create a "New deployment"
+  (do not edit the existing one) — this gives you a new URL to paste
+
+-->
+</body>
+</html>
