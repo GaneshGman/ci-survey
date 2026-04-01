@@ -894,7 +894,7 @@ async function saveToSheets({ name, email, jobTitle, scores, avg, ts }) {
   };
 
   try {
-    const res = await fetch(APPS_SCRIPT_URL, {
+    const res = await fetch("https://script.google.com/macros/s/AKfycbzAc_2YAUKkovFFfepErrlBOKFBOprpVbSAsCRdpOznkKqzGyeN2tC612oARJwbC56m/exec", {
       method: 'POST',
       headers: { 'Content-Type': 'text/plain' },
       body: JSON.stringify(payload)
@@ -902,7 +902,7 @@ async function saveToSheets({ name, email, jobTitle, scores, avg, ts }) {
     const json = await res.json();
     if (json.status === 'ok') {
       notice.className = 'sub-notice show notice-ok';
-      notice.textContent = '✅ Results saved successfully. Your management team will be able to review your results in Google Sheets.';
+      notice.textContent = '✅ Here Is Your Results.';
     } else { throw new Error(json.message || 'Error'); }
   } catch (err) {
     notice.className = 'sub-notice show notice-err';
