@@ -50,6 +50,16 @@ body {
 }
 
 /* ══ TOP BAR ══════════════════════════════════════════════════ */
+<div class="topbar">
+  <div class="topbar-brand">
+    <div class="topbar-name">Leadership Resources</div>
+    <div class="topbar-sep"></div>
+    <div class="topbar-partner">Crucial Learning Partner · Malaysia</div>
+  </div>
+  <div style="font-size:11px;color:rgba(255,255,255,.4);letter-spacing:.05em;text-transform:uppercase;">Free Assessment</div>
+</div>
+
+<!-- ═══ HERO ═══════════════════════════════════════════════════ -->
 .topbar {
   background: var(--navy);
   padding: 10px 32px;
@@ -602,7 +612,33 @@ body {
 
 
 <!-- ═══ HERO ═══════════════════════════════════════════════════ -->
-
+<header class="hero">
+  <div class="hero-cl-logo">
+    <span>Crucial Learning · Crucial Influence</span>
+  </div>
+  <h1>Crucial <span>Influence</span><br>Assessment</h1>
+  <p class="hero-sub">
+    Measure your personal influence effectiveness across 8 leadership strategies and discover your growth opportunities.
+  </p>
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <span class="val">8</span>
+      <span class="lbl">Strategies</span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="val">32</span>
+      <span class="lbl">Questions</span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="val">~5</span>
+      <span class="lbl">Minutes</span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="val">Free</span>
+      <span class="lbl">Assessment</span>
+    </div>
+  </div>
+</header>
 
 <!-- ═══ PROGRESS BAR ══════════════════════════════════════════ -->
 <div class="progress-bar-wrap">
@@ -686,7 +722,9 @@ body {
 </main>
 
 <!-- ═══ FOOTER ═════════════════════════════════════════════════ -->
-
+<footer class="site-footer">
+  <p>© 2025 <a href="https://leadershipresources.my" target="_blank">Leadership Resources (M) Sdn Bhd</a> &nbsp;·&nbsp; Authorised Partner of Crucial Learning &nbsp;·&nbsp; All rights reserved.</p>
+</footer>
 
 <script>
 // ════════════════════════════════════════════════════════════════════
@@ -902,7 +940,7 @@ async function saveToSheets({ name, email, jobTitle, scores, avg, ts }) {
     const json = await res.json();
     if (json.status === 'ok') {
       notice.className = 'sub-notice show notice-ok';
-      notice.textContent = '✅ Here Is Your Results.';
+      notice.textContent = '✅ Here Are Your Results.';
     } else { throw new Error(json.message || 'Error'); }
   } catch (err) {
     notice.className = 'sub-notice show notice-err';
